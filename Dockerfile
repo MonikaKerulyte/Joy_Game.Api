@@ -11,7 +11,7 @@ COPY ["Game.Api.csproj", "Game.Api/"]
 RUN dotnet restore "Game.Api/Game.Api.csproj"
 COPY . .
 WORKDIR "/src/Game.Api"
-RUN dotnet build "Game.Api.csproj" -o /app/build
+RUN dotnet build "Game.Api.csproj" -c Release -o /app/build
 
 FROM build AS publish
 RUN dotnet publish "Game.Api.csproj" -c Release -o /app/publish /p:UseAppHost=false
