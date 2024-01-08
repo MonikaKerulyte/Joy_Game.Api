@@ -110,3 +110,10 @@ C:\Users\Monika\Documents\Fontys\Semester 6\Individual\Jokesgame\Game.Api\obj\Re
 C:\Users\Monika\Documents\Fontys\Semester 6\Individual\Jokesgame\Game.Api\obj\Release\net7.0\Game.Api.pdb
 C:\Users\Monika\Documents\Fontys\Semester 6\Individual\Jokesgame\Game.Api\obj\Release\net7.0\Game.Api.genruntimeconfig.cache
 C:\Users\Monika\Documents\Fontys\Semester 6\Individual\Jokesgame\Game.Api\obj\Release\net7.0\ref\Game.Api.dll
+C:\app\buil\appsettings.Development.json
+C:\app\buil\appsettings.json
+C:\app\buil\Game.Api.exe
+C:\app\buil\Game.Api.deps.json
+C:\app\buil\Game.Api.runtimeconfig.json
+C:\app\buil\Game.Api.dll
+C:\app\buil\Game.Api.pdb
