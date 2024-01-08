@@ -6,8 +6,8 @@ using Microsoft.Identity.Web;
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
-builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
-    .AddMicrosoftIdentityWebApi(builder.Configuration.GetSection("AzureAd"));
+//builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
+//    .AddMicrosoftIdentityWebApi(builder.Configuration.GetSection("AzureAd"));
 
 builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
@@ -19,6 +19,15 @@ string connectionString = builder.Configuration.GetConnectionString("DefaultConn
 builder.Services.AddDbContext<GameDbContext>(options =>
 {
     options.UseMySQL(connectionString);
+});
+
+builder.Services.AddCors(options =>
+{
+    options.AddPolicy(name: "allow_api_gateway",
+        policy =>
+        {
+            policy.WithOrigins("http://localhost:5084").AllowAnyHeader().AllowAnyMethod().AllowCredentials();
+        });
 });
 
 var app = builder.Build();
@@ -35,5 +44,7 @@ app.UseHttpsRedirection();
 app.UseAuthorization();
 
 app.MapControllers();
+
+app.UseCors("allow_api_gateway");
 
 app.Run();
