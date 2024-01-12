@@ -8,9 +8,8 @@ EXPOSE 443
 FROM mcr.microsoft.com/dotnet/sdk:7.0 AS build
 WORKDIR /src
 #COPY ["Joy_Game.Api/Game.Api.csproj", "Game.Api/"]
-COPY . .
-#RUN dotnet restore "Game.Api/Game.Api.csproj"
-RUN dotnet restore "Game.Api.csproj"
+COPY . "Game.Api/"
+RUN dotnet restore "Game.Api/Game.Api.csproj"
 COPY . .
 WORKDIR "/src/Game.Api"
 RUN dotnet build "Game.Api.csproj" -o /app/build
