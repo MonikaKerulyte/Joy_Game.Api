@@ -86,7 +86,7 @@ namespace Game.Api.Controllers
         [ProducesResponseType((int)HttpStatusCode.BadRequest)]
         public async Task<IActionResult> TestAsync()
         {
-            return Ok("I'm a test endpoint.");
+            return Ok("I'm a test endpoint for Monika's project.");
         }
     }
 }
