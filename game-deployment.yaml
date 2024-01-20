@@ -17,7 +17,7 @@ spec:
     spec:
       containers:
         - name: game-api
-          image: flaminga/gameapi:latest
+          image: GameApi20240120144812.azurecr.io/gameapi:latest
           # resources:
           #   limits:
           #     cpu: 50m
