@@ -6,7 +6,7 @@ metadata:
   labels:
     app: game-api
 spec:
-  replicas: 1
+  replicas: "1"
   selector:
     matchLabels:
       app: game-api
@@ -20,9 +20,9 @@ spec:
           image: flaminga/gameapi:latest
           resources:
             limits:
-              cpu: 50m
+              cpu: "50m"
             requests:
-              cpu: 20mx
+              cpu: "20mx"
           ports:
-            - containerPort: 80
-              containerPort: 443
+            - containerPort: "80"
+              containerPort: "443"
