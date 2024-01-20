@@ -1,0 +1,44 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: game-api
+  namespace: default
+  labels:
+    app: game-api
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: game-api
+  template:
+    metadata:
+      labels:
+        app: game-api
+    spec:
+      containers:
+        - name: game-api
+          image: flaminga/gameapi:latest
+          resources:
+            limits:
+              cpu: 50m
+            requests:
+              cpu: 20mx
+          ports:
+            - containerPort: 80
+              containerPort: 443
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: game-api-service
+spec:
+  type: LoadBalancer
+  selector:
+    app: game-api
+  ports:
+    - port: 80
+      targetPort: 80
+      name: http
+    - port: 443
+      targetPort: 443
+      name: https

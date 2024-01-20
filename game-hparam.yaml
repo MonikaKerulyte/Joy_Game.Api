@@ -1,0 +1,19 @@
+apiVersion: autoscaling/v2
+kind: HorizontalPodAutoscaler
+metadata:
+  name: ram-hpa
+  namespace: default
+spec:
+  scaleTargetRef:
+    kind: Deployment
+    name: game-api
+    apiVersion: apps/v1
+  minReplicas: 1
+  maxReplicas: 5
+  metrics:
+    - type: Resource
+      resource:
+        name: memory
+        target:
+          type: Utilization
+          averageUtilization: 60
