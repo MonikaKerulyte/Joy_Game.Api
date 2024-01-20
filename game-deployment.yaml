@@ -6,7 +6,7 @@ metadata:
   labels:
     app: game-api
 spec:
-  replicas: "1"
+  replicas: 1
   selector:
     matchLabels:
       app: game-api
@@ -18,11 +18,18 @@ spec:
       containers:
         - name: game-api
           image: flaminga/gameapi:latest
-          resources:
-            limits:
-              cpu: "50m"
-            requests:
-              cpu: "20mx"
+          # resources:
+          #   limits:
+          #     cpu: 50m
+          #   requests:
+          #     cpu: 20mx
+          # securityContext:
+          #   allowPrivilegeEscalation: false
+          #   runAsNonRoot: false
+          #   capabilities:
+          #     drop:
+          #       - ALL
+          #   readOnlyRootFilesystem: true
           ports:
-            - containerPort: "80"
-              containerPort: "443"
+            - containerPort: 80
+              containerPort: 443
