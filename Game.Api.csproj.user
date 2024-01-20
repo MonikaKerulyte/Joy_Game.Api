@@ -2,7 +2,7 @@
 <Project ToolsVersion="Current" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <PropertyGroup>
     <ActiveDebugProfile>Docker</ActiveDebugProfile>
-    <NameOfLastUsedPublishProfile>C:\Users\Monika\Documents\Fontys\Semester 6\Individual\Jokesgame\Game.Api\Properties\PublishProfiles\registry.hub.docker.com_flaminga.pubxml</NameOfLastUsedPublishProfile>
+    <NameOfLastUsedPublishProfile>C:\Users\Monika\Documents\Fontys\Semester 6\Individual\Jokesgame\Game.Api\Properties\PublishProfiles\GameApi20240120144812.pubxml</NameOfLastUsedPublishProfile>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
     <DebuggerFlavor>ProjectDebugger</DebuggerFlavor>
